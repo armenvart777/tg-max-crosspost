@@ -1,0 +1,14 @@
+[Unit]
+Description=TG→MAX Crosspost Bot
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/root/tg_max_crosspost
+EnvironmentFile=/root/tg_max_crosspost/.env
+ExecStart=/usr/bin/python3 /root/tg_max_crosspost/bot.py
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target
